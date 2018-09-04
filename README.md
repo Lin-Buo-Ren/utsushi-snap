@@ -10,7 +10,7 @@ Snapcrafters ([join us](https://forum.snapcraft.io/t/join-snapcrafters/1325)) ar
   - It is recommended to *avoid forking the template repository* unless you're working on the template itself because you can only fork a repository once
 - [x] Update the description of the repository
 - [x] Update logos and references to `[Project]`, `my-awesome-app` and other placeholder names in `README.md`, `snap/README.md`, and `snap/snapcraft.yaml`
-- [ ] Add upstream contact information to this `README.md`
+- [x] Add upstream contact information to this `README.md`
 - [ ] Create a snap that runs in `devmode`
 - [ ] Add a screenshot to `snap/README.md`
 - [ ] Register the snap in the store, **using the preferred upstream name**(i.e. without custom postfix).  If the preferred upstream name is not available or reserved, [file a request to take over the preferred upstream name](https://dashboard.snapcraft.io/register-snap) and temporary use a name with personal postfix instead.
@@ -46,11 +46,7 @@ If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft
 | :----------------------------------------------------------: |
 |   [林博仁<br>Buo-ren, Lin](https://Lin-Buo-Ren.github.io)    |
 
-<!-- Uncomment and modify this when you have upstream contacts
-
 ## Upstream
-| [![Upstream Name](http://gravatar.com/avatar/bc0bced65e963eb5c3a16cab8b004431?s=128)](https://github.com/upstreamname) |
+| [![GitLab Logo](https://about.gitlab.com/images/press/logo/logo.svg)](https://gitlab.com/utsushi/utsushi/issues) |
 | :----------------------------------------------------------: |
-|       [Upstream Name](https://github.com/upstreamname)       |
-
--->
+| [Issues · utsushi / utsushi · GitLab](https://gitlab.com/utsushi/utsushi/issues) |
