@@ -52,10 +52,8 @@ Check out the [issue tracker](https://github.com/Lin-Buo-Ren/utsushi-snap/issues
 * [A list of functionallities that are not tested for any reasons.]
 -->
 
-<!-- Uncomment when you have initialized the URLs
 ## Support
 * Report issues regarding using this snap to the issue tracker:  
   <https://github.com/Lin-Buo-Ren/utsushi-snap/issues>
 * You may also post on the Snapcraft Forum, under the `snap` topic category:  
   <https://forum.snapcraft.io/c/snap>
--->
