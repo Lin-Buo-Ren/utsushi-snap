@@ -1,0 +1,98 @@
+%YAML 1.2
+---
+# Snapcraft Recipe for Utsushi
+# ------------------------------
+# This file is in the YAML data serialization format:
+# http://yaml.org
+# For the spec. of writing this file refer the following documentation:
+# * Snapcraft.yaml reference
+#   https://forum.snapcraft.io/t/snapcraft-yaml-reference/4276
+# * The snapcraft syntax
+#   https://docs.snapcraft.io/build-snaps/syntax
+# * Snap Docs
+#   https://snapdocs.labix.org
+# * Latest doc topics in the Snapcraft Forum
+#   https://forum.snapcraft.io/c/doc
+# For support refer to the snapcraft section in the Snapcraft Forum:
+# https://forum.snapcraft.io/c/snapcraft
+
+name: utsushi
+summary: Next Generation Image Acquisition
+description: |
+  This is original unrebranded Epson ImageScan application that can be used with compatible Epson scanners.
+
+version: determined-by-version-script
+version-script: ./snap/utilities/set-snap-version.bash
+
+confinement: devmode # use 'strict' once you have the right plugs and slots
+grade: devel
+icon: snap/gui/icon.svg
+
+apps:
+  utsushi:
+    command: utsushi-launch
+    desktop: share/applications/utsushi.desktop
+
+    # Refer the following documentation for asserting interface plugs and slots in a security confined snap:
+    # Interfaces - doc - snapcraft.io
+    # https://forum.snapcraft.io/t/interfaces/6154
+    # Non-A/C: Non-autoconnect interface
+    plugs:
+    # For snaps with a graphical user interface:
+    - desktop
+    - desktop-legacy
+    - x11
+    - unity7
+    - wayland
+
+    # Storage access
+    - home
+    - removable-media # Non-A/C
+
+    #slots:
+
+parts:
+  # Assets from the snap packaging, refer each READMEs under the `snap` folder for more information
+  assets:
+    source: snap
+    source-type: local
+    plugin: nil
+
+    override-build: |
+      set \
+        -o errexit \
+        -o nounset
+
+      ./utilities/install-assets.bash
+    prime:
+    - -utilities
+    - -patches
+
+  # Optional auxiliary part for displaying simple dialogs for better user experience, using Yet Another Dialog
+  yad:
+    after:
+    - desktop-gtk3
+
+    plugin: nil
+    stage-packages:
+    - yad
+
+  utsushi:
+    after:
+    - assets
+
+    #source:
+    #source-type:
+    #source-tag:
+    #source-depth:
+
+    plugin: nil
+
+    override-stage: |
+      set \
+        -o errexit \
+        -o nounset
+
+      snapcraftctl stage
+
+      utilities/patch-desktop-entries.bash

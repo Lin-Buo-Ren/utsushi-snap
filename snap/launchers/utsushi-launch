@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Launcher of the Utsushi application
+# 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com> © 2018
+
+set \
+	-o errexit \
+	-o errtrace \
+	-o nounset \
+	-o pipefail
+
+# Make necessary runtime changes to make the snap work
+#export IMPORTANT_ENVIRONMENT_VARIABLE=value
+
+# Finally run the launching command
+desktop-launch \
+	utsushi "${@}"
+
+
