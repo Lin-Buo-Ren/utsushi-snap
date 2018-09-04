@@ -3,7 +3,7 @@
 	Use the RawGit service for easy access to in-repo pictures:
 	https://rawgit.com
 -->
-![Icon of Utsushi](gui/logo.svg "Icon of Utsushi")
+![Icon of Utsushi](https://cdn.rawgit.com/Lin-Buo-Ren/utsushi-snap/95423ac9/snap/gui/logo.svg "Icon of Utsushi")
 
 **This is the unofficial snap for Utsushi**, *"Next Generation Image Acquisition"*. It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
 
