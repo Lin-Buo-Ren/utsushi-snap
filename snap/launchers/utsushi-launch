@@ -8,8 +8,34 @@ set \
 	-o nounset \
 	-o pipefail
 
+case "${SNAP_ARCH}" in
+	amd64)
+		arch_triplet=x86_64-linux-gnu
+	;;
+	armhf)
+		arch_triplet=arm-linux-gnueabihf
+	;;
+	arm64)
+		arch_triplet=aarch64-linux-gnu
+	;;
+	*)
+		arch_triplet="${SNAP_ARCH}"-linux-gnu
+	;;
+esac
+
 # Make necessary runtime changes to make the snap work
-#export IMPORTANT_ENVIRONMENT_VARIABLE=value
+## HACK: Command wrappers in classic snaps doesn't set in-snap runtime search path and dynamic linker library paths
+export PATH="$SNAP/usr/sbin:$SNAP/usr/bin:$SNAP/sbin:$SNAP/bin:$PATH"
+
+if test -v LD_LIBRARY_PATH; then
+	LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SNAP/lib:$SNAP/usr/lib:$SNAP/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet/mesa-egl"
+else
+	LD_LIBRARY_PATH="$SNAP/lib:$SNAP/usr/lib:$SNAP/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet/mesa-egl"
+fi
+LD_LIBRARY_PATH="$SNAP/usr/lib:$SNAP/usr/lib/$arch_triplet:$LD_LIBRARY_PATH"
+LD_LIBRARY_PATH=$SNAP_LIBRARY_PATH:$LD_LIBRARY_PATH
+LD_LIBRARY_PATH="$SNAP"/lib/utsushi:"$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH
 
 # Finally run the launching command
 desktop-launch \

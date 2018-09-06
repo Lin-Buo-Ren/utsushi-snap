@@ -30,7 +30,7 @@ icon: snap/gui/icon.svg
 
 apps:
   utsushi:
-    command: utsushi-launch
+    command: bin/utsushi-launch
     desktop: share/applications/utsushi.desktop
 
     # Refer the following documentation for asserting interface plugs and slots in a security confined snap:
@@ -101,13 +101,85 @@ parts:
   utsushi:
     after:
     - assets
+    - desktop-gtk3
 
-    #source:
-    #source-type:
-    #source-tag:
-    #source-depth:
+    source: https://gitlab.com/utsushi/utsushi.git
+    source-depth: 1
 
-    plugin: nil
+    plugin: autotools
+    configflags:
+    - --prefix=/snap/utsushi/current
+    - CXXFLAGS=-std=c++11
+
+    override-build: |
+      set \
+        -o errexit \
+        -o nounset
+
+      sudo ./install-deps
+      ./bootstrap \
+        --force
+
+      snapcraftctl build
+
+      # Patch broken executable symbolic link
+      ln \
+        --force \
+        --no-dereference \
+        --symbolic \
+        --verbose \
+        ../libexec/utsushi/utsushi-main \
+        "${SNAPCRAFT_PART_INSTALL}"/snap/utsushi/current/bin/utsushi
+
+    organize:
+      snap/utsushi/current: /
+
+    stage-packages:
+    - libatkmm-1.6-1v5
+    - libboost-filesystem1.58.0
+    - libboost-program-options1.58.0
+    - libboost-system1.58.0
+    - libcairomm-1.0-1v5
+    - libglibmm-2.4-1v5
+    - libgomp1
+    - libgraphicsmagick++-q16-12
+    - libgraphicsmagick-q16-3
+    - libgtkmm-2.4-1v5
+    - libjasper1
+    - libltdl7
+    - libpangomm-1.4-1v5
+    - libsigc++-2.0-0v5
+    - libusb-1.0-0
+    - libwebp5
+    - libwmf0.2-7
+
+    filesets:
+      etc:
+      - etc
+      executables:
+      - bin
+      - libexec
+      library-headers:
+      - include
+      libraries:
+      - lib
+      localization:
+      - share/locale
+      resources:
+      - share/utsushi
+      sane:
+      - usr/lib/*/sane
+      usr-from-staged-packages:
+      - usr
+
+    stage:
+    - $etc
+    - $executables
+    - $libraries
+    - $localization
+    - $resources
+    - $sane
+    - $usr-from-staged-packages
 
     override-stage: |
       set \
@@ -117,3 +189,12 @@ parts:
       snapcraftctl stage
 
       utilities/patch-desktop-entries.bash
+
+    prime:
+    - $etc
+    - $executables
+    - $libraries
+    - $localization
+    - $resources
+    - $sane
+    - $usr-from-staged-packages
