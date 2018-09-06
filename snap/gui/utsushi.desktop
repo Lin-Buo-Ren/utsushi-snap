@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Categories=GTK;Application;Graphics;RasterGraphics;Scanning;
+
+Name=Utsushi
+Name[ja_JP]=写師
+Name[zh_TW]=写師(Utsushi)
+Comment=Scan documents and images with your Epson scanner
+Comment[zh_TW]=使用您的 Epson 掃描器來掃描文件和圖片
+
+Exec=utsushi
+Terminal=false
+Icon=scanner
