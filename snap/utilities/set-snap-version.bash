@@ -11,9 +11,23 @@ set \
 init(){
 	local \
 		upstream_version \
+		midstream_git_commit_hash \
 		packaging_revision
 
 	upstream_version="$(
+		grep \
+			'^AC_INIT(' \
+			parts/utsushi/src/configure.ac \
+			| cut \
+				--delimiter=, \
+				--fields=2 \
+			| sed \
+				's/^.*\[//' \
+			| sed \
+				's/\].*$//'
+	)"
+
+	midstream_git_commit_hash="$(
 		git \
 			-C parts/utsushi/src \
 			describe \
@@ -35,7 +49,7 @@ init(){
 	printf \
 		-- \
 		'%s' \
-		"${upstream_version}+pkg-${packaging_revision}"
+		"${upstream_version}"-"${midstream_git_commit_hash}"+pkg-"${packaging_revision}"
 
 	exit 0
 }
