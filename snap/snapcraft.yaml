@@ -24,7 +24,7 @@ description: |
 version: determined-by-version-script
 version-script: ./snap/utilities/set-snap-version.bash
 
-confinement: devmode # use 'strict' once you have the right plugs and slots
+confinement: classic
 grade: devel
 icon: snap/gui/icon.svg
 
@@ -48,6 +48,9 @@ apps:
     # Storage access
     - home
     - removable-media # Non-A/C
+
+    # Scanner access (still not supported by snapd)
+    #- scanner
 
     #slots:
 
