@@ -13,7 +13,6 @@
 
 Published for <img src="http://anything.codes/slack-emoji-for-techies/emoji/tux.png" align="top" width="24" /> with 💝 by Snapcrafters
 
-<!-- Uncomment and modify this when you have published the snap to the Snap Store
 ## Installation
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
@@ -27,11 +26,11 @@ Published for <img src="http://anything.codes/slack-emoji-for-techies/emoji/tux.
     
     # Connect the Snap to Required Interfaces #
     ## _plug_name_: Reasoning of connecting _plug_name_ ##
-    sudo snap connect utsushi:_plug_name_
+    #sudo snap connect utsushi:_plug_name_
     
     # Connect the Snap to Optional Interfaces #
     ## _plug_name_: Reasoning of connecting _plug_name_ ##
-    sudo snap connect utsushi:_plug_name_
+    #sudo snap connect utsushi:_plug_name_
 
 ### The Graphical Way
 Browse <https://snapcraft.io/utsushi> and follow the instructions.
@@ -42,7 +41,6 @@ Currently regular snap installation is not possible, you have to use the `snap t
 1. Create `prime/libexec/utsushi/esci-gt-s650` symbolic link that points to `esci-interpreter` in the same directory
 2. Copy the `libcnx-esci-gt-s650.so*` files from the plugin package to `prime/lib/utsushi`
 3. `/usr/share/utsushi/esfw010c.bin` scanner firmware file must be available in your system
--->
 
 <!-- Uncomment when you have test results
 ## What is Working
