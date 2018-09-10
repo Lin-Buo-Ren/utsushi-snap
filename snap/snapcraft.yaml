@@ -56,6 +56,7 @@ apps:
 
     # Scanner access (still not supported by snapd)
     #- scanner
+    - hardware-observe # sysfs, udev readonly access; Non-A/C
     - raw-usb # USB device write access; Non-A/C
 
     #slots:
