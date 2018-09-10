@@ -25,12 +25,15 @@ Published for <img src="http://anything.codes/slack-emoji-for-techies/emoji/tux.
     #sudo snap install utsushi
     
     # Connect the Snap to Required Interfaces #
-    ## _plug_name_: Reasoning of connecting _plug_name_ ##
-    #sudo snap connect utsushi:_plug_name_
+    ## hardware-observe: For reading information of the scanner ##
+    sudo snap connect utsushi:hardware-observe
+    
+    ## raw-usb: For write access to USB scanner devices
+    sudo snap connect utsushi:raw-usb
     
     # Connect the Snap to Optional Interfaces #
-    ## _plug_name_: Reasoning of connecting _plug_name_ ##
-    #sudo snap connect utsushi:_plug_name_
+    ## removable-media: For saving scanned files to /media/* and /run/media/* ##
+    sudo snap connect utsushi:removable-media
 
 ### The Graphical Way
 Browse <https://snapcraft.io/utsushi> and follow the instructions.
