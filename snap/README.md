@@ -35,6 +35,13 @@ Published for <img src="http://anything.codes/slack-emoji-for-techies/emoji/tux.
 
 ### The Graphical Way
 Browse <https://snapcraft.io/utsushi> and follow the instructions.
+
+### Hack for Epson Perfection V39
+Currently regular snap installation is not possible, you have to use the `snap try` feature to install the snap directly from the built /prime folder so you can add missing non-free plugin files into it.  You may aquire these files from the `imagescan-plugin-gt-s650` plugin package [from Epson](http://download.ebz.epson.net/dsc/search/01/search/?OSC=LX).
+
+1. Create `prime/libexec/utsushi/esci-gt-s650` symbolic link that points to `esci-interpreter` in the same directory
+2. Copy the `libcnx-esci-gt-s650.so*` files from the plugin package to `prime/lib/utsushi`
+3. `/usr/share/utsushi/esfw010c.bin` scanner firmware file must be available in your system
 -->
 
 <!-- Uncomment when you have test results
