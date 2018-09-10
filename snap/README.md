@@ -20,8 +20,7 @@ Published for <img src="http://anything.codes/slack-emoji-for-techies/emoji/tux.
 
 ### In Terminal
     # Install Snap #
-    sudo snap install --channel=edge --devmode utsushi
-    #sudo snap install --channel=beta utsushi
+    sudo snap install --channel=beta utsushi
     #sudo snap install utsushi
     
     # Connect the Snap to Required Interfaces #
