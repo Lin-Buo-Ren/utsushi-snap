@@ -29,7 +29,7 @@ version-script: ./snap/utilities/set-snap-version.bash
 # Reason for classic confinement:
 # * Snap requires access to device-specific firmware and library which is not re-distributable
 # * Requires access to scanner hardware, which is not provided by any interfaces(TODO: Does `raw-usb` work?)
-confinement: classic
+confinement: devmode
 grade: devel
 icon: snap/gui/icon.svg
 
@@ -56,6 +56,7 @@ apps:
 
     # Scanner access (still not supported by snapd)
     #- scanner
+    - raw-usb
 
     #slots:
 

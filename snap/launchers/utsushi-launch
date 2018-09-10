@@ -25,14 +25,14 @@ esac
 
 # Make necessary runtime changes to make the snap work
 ## HACK: Command wrappers in classic snaps doesn't set in-snap runtime search path and dynamic linker library paths
-export PATH="$SNAP/usr/sbin:$SNAP/usr/bin:$SNAP/sbin:$SNAP/bin:$PATH"
-
-if test -v LD_LIBRARY_PATH; then
-	LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SNAP/lib:$SNAP/usr/lib:$SNAP/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet/mesa-egl"
-else
-	LD_LIBRARY_PATH="$SNAP/lib:$SNAP/usr/lib:$SNAP/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet/mesa-egl"
-fi
-LD_LIBRARY_PATH=$SNAP_LIBRARY_PATH:$LD_LIBRARY_PATH
+# export PATH="$SNAP/usr/sbin:$SNAP/usr/bin:$SNAP/sbin:$SNAP/bin:$PATH"
+# 
+# if test -v LD_LIBRARY_PATH; then
+# 	LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SNAP/lib:$SNAP/usr/lib:$SNAP/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet/mesa-egl"
+# else
+# 	LD_LIBRARY_PATH="$SNAP/lib:$SNAP/usr/lib:$SNAP/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet:$SNAP/usr/lib/$arch_triplet/mesa-egl"
+# fi
+# LD_LIBRARY_PATH=$SNAP_LIBRARY_PATH:$LD_LIBRARY_PATH
 LD_LIBRARY_PATH="$SNAP"/lib/utsushi:"$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH
 
