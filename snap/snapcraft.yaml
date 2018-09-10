@@ -138,6 +138,14 @@ parts:
         ../libexec/utsushi/utsushi-main \
         "${SNAPCRAFT_PART_INSTALL}"/snap/utsushi/current/bin/utsushi
 
+      # Hardware-specific hack for Perfection V39
+      ln \
+        --force \
+        --symbolic \
+        --verbose \
+        esci-interpreter \
+        "${SNAPCRAFT_PART_INSTALL}"/snap/utsushi/current/libexec/utsushi/esci-gt-s650
+
     organize:
       snap/utsushi/current: /
 
