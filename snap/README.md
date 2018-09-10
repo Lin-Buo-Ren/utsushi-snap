@@ -17,6 +17,8 @@ Published for <img src="http://anything.codes/slack-emoji-for-techies/emoji/tux.
 ## Installation
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
+**NOTE:** Currently due to missing device-specific files, most Epson scanners are likely not going to work with only this snap.  Refer the following section for device-specific hacks.
+
 ### In Terminal
     # Install Snap #
     sudo snap install --channel=edge --devmode utsushi
