@@ -126,6 +126,13 @@ parts:
       ./bootstrap \
         --force
 
+      # Attempt to fix armhf build by using distro's config files
+      cp \
+        --force \
+        --verbose \
+        /usr/share/misc/config.* \
+        .
+
       snapcraftctl build
 
       # Patch broken executable symbolic link
