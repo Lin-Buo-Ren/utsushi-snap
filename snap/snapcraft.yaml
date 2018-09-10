@@ -115,6 +115,7 @@ parts:
     plugin: autotools
     configflags:
     - --prefix=/snap/utsushi/current
+    - --with-boost-libdir=/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
     - CXXFLAGS=-std=c++11
 
     override-build: |
