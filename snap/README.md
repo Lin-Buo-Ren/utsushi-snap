@@ -45,18 +45,18 @@ Currently regular snap installation is not possible, you have to use the `snap t
 2. Copy the `libcnx-esci-gt-s650.so*` files from the plugin package to `prime/lib/utsushi`
 3. `/usr/share/utsushi/esfw010c.bin` scanner firmware file must be available in your system
 
-<!-- Uncomment when you have test results
 ## What is Working
-* [A list of functionallities that are verified working]
+* `utsushi list` to list supported scanners
+* Preview (requires additonal hack for device-specific files for Perfection V39)
+* Scan to image (requires additonal hack for device-specific files for Perfection V39)
 
 ## What is NOT Working...yet 
-* [A list of functionallities that are verified not working]
+* Make the snap works with Perfection V39(and possibly many others) without additional hacking
 
 Check out the [issue tracker](https://github.com/Lin-Buo-Ren/utsushi-snap/issues) for more known issues.
 
 ## What is NOT Tested...yet
-* [A list of functionallities that are not tested for any reasons.]
--->
+* Anything not listed in "What is Working" section
 
 ## Support
 * Report issues regarding using this snap to the issue tracker:  
