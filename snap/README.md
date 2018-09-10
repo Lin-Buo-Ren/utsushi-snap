@@ -11,9 +11,7 @@
 [![Build Status Badge of the `utsushi` Snap](https://build.snapcraft.io/badge/Lin-Buo-Ren/utsushi-snap.svg "Build Status of the `utsushi` snap")](https://build.snapcraft.io/user/Lin-Buo-Ren/utsushi-snap)
 -->
 
-<!-- Uncomment and modify this when you have a screenshot
-![Screenshot of the Snapped Application](screenshots/screenshot.png "Screenshot of the Snapped Application")
--->
+![Screenshot of the Snapped Application](https://cdn.rawgit.com/Lin-Buo-Ren/utsushi-snap/5d179e13/snap/screenshots/main-window.png "Screenshot of the Snapped Application")
 
 Published for <img src="http://anything.codes/slack-emoji-for-techies/emoji/tux.png" align="top" width="24" /> with 💝 by Snapcrafters
 
