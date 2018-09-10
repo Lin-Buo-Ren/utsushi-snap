@@ -7,9 +7,7 @@
 
 **This is the unofficial snap for Utsushi**, *"Next Generation Image Acquisition"*. It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
 
-<!-- Uncomment and modify this when you are provided a build status badge
 [![Build Status Badge of the `utsushi` Snap](https://build.snapcraft.io/badge/Lin-Buo-Ren/utsushi-snap.svg "Build Status of the `utsushi` snap")](https://build.snapcraft.io/user/Lin-Buo-Ren/utsushi-snap)
--->
 
 ![Screenshot of the Snapped Application](https://cdn.rawgit.com/Lin-Buo-Ren/utsushi-snap/5d179e13/snap/screenshots/main-window.png "Screenshot of the Snapped Application")
 
