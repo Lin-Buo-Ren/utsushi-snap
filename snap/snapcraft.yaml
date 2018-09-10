@@ -56,7 +56,7 @@ apps:
 
     # Scanner access (still not supported by snapd)
     #- scanner
-    - raw-usb
+    - raw-usb # USB device write access; Non-A/C
 
     #slots:
 
