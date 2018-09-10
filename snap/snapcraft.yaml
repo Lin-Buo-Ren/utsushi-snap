@@ -19,7 +19,7 @@
 name: utsushi
 summary: Next Generation Image Acquisition
 description: |
-  This is original unrebranded Epson ImageScan application that can be used with compatible Epson scanners.
+  This is original un-rebranded Epson's "Image Scan! for Linux" application that can be used with compatible Epson scanners.
 
   **NOTE:** Currently due to missing device-specific files, most Epson scanners are likely not going to work with only this snap.
 
