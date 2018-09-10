@@ -47,6 +47,6 @@ If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft
 |   [林博仁<br>Buo-ren, Lin](https://Lin-Buo-Ren.github.io)    |
 
 ## Upstream
-| [![GitLab Logo](https://about.gitlab.com/images/press/logo/logo.svg)](https://gitlab.com/utsushi/utsushi/issues) |
-| :----------------------------------------------------------: |
-| [Issues · utsushi / utsushi · GitLab](https://gitlab.com/utsushi/utsushi/issues) |
+| [![GitLab Logo](https://about.gitlab.com/images/press/logo/logo.svg)](https://gitlab.com/utsushi/utsushi/issues) | "Epson Image Scan! for Linux" / "Utsushi"<br>Right Holders<br>SEIKO EPSON CORPORATION<br>(EPSON AVASYS CORPORATION) |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| [Issues · utsushi / utsushi · GitLab](https://gitlab.com/utsushi/utsushi/issues) |                   <linux-scanner@epson.jp>                   |
